@@ -9,7 +9,7 @@
 #define MAXQSIZE 9000000       // Maximum size of the queue, q
 #define MAXURL 100000          // Maximum size of a URL
 #define MAXPAGESIZE 200000          // Maximum size of a webpage
-#define MAXDOWNLOADS 2000      // Maximum number of downloads we will attempt
+#define MAXDOWNLOADS 50000      // Maximum number of downloads we will attempt
 
 
 struct buffer{
@@ -164,6 +164,7 @@ char *ParseTitle(char *t_1){
             || t_1[i] == '!'
             || t_1[i] == ';'){
             t_2[j++] = ' ';
+            t_2[j++] = t_1[i++];
         } else if (t_1[i] >= '0' && t_1[i] <= '9'){
             while (t_1[i] >= '0' && t_1[i] <= '9'){
                 i++;
@@ -373,7 +374,7 @@ void insert_in_tree(char *url) {
 
 void WriteToFile(struct buffer *buf, char *path){
     FILE *f_out;
-    f_out = fopen(path, "w");
+    f_out = fopen(path, "a");
     fprintf(f_out, "%s", buf->buf);
     fclose(f_out);
 }
@@ -381,9 +382,10 @@ void WriteToFile(struct buffer *buf, char *path){
 //simple whitelist function to add allowed sites more easily
 int Whitelist(char *url) {
     const int wlist_size = 3;
-    const char *wlist[] = {"leidenuniv.nl",
-                                "liacs.nl",
-                                "universiteitleiden.nl"};
+    const char *wlist[] = {"polygon.com",
+                                "nytimes.com",
+                                "huffingtonpost.com",
+                                "abcnews.go.com"};
     int i;
     for (i = 0; i < wlist_size; i++)
     {
@@ -457,11 +459,16 @@ int main(int argc, char* argv[]) {
                     title = ParseTitle(title);
                     AppendSeq(&q_2, title);
                 }
+                if (q_2.size > 20000){
+                    WriteToFile(&q_2, argv[2]);
+                    free(q_2.buf);
+                    q_2.buf = calloc(1, 1);
+                    q_2.size = 0;
+                }
             }
         } else {
             printf("\n\nNot in allowed domains: %s\n\n",url);
         }
-        WriteToFile(&q_2, "data1.txt");
     }
     free(q_1.buf);
     free(q_2.buf);
