@@ -83,12 +83,22 @@ vocab_size = len(tokenizer.word_index) + 1
 word_index = tokenizer.word_index
 print(word_index)
 print("vocabulary size: ", vocab_size)
-reverse_word_index = {v: k for k, v in word_index.items()}
+rword_index = {v: k for k, v in word_index.items()}
 
+
+#save dictionaries
+json_0 = json.dumps(word_index)
+f = open("dict_abc.json","w")
+f.write(json_0)
+f.close()
+json_1 = json.dumps(rword_index)
+f = open("rdict_abc.json","w")
+f.write(json_1)
+f.close()
 
 
 
 model = create()
-loss = train(model, 20)
+loss = train(model, 30)
 print(loss)
 model.save('anp_20.h5')
