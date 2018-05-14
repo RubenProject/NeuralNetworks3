@@ -381,7 +381,7 @@ void WriteToFile(struct buffer *buf, char *path){
 
 //simple whitelist function to add allowed sites more easily
 int Whitelist(char *url) {
-    const int wlist_size = 3;
+    const int wlist_size = 4;
     const char *wlist[] = {"polygon.com",
                                 "nytimes.com",
                                 "huffingtonpost.com",
