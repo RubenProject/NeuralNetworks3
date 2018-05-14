@@ -1,6 +1,6 @@
- – Breaking News , Latest News , Headlines & Videos <EOS>
- VR – Virtual Reality News Stories <EOS>
-Sports News & Articles – Scores , Pictures , Videos <EOS>
+ Â– Breaking News , Latest News , Headlines & Videos <EOS>
+ VR Â– Virtual Reality News Stories <EOS>
+Sports News & Articles Â– Scores , Pictures , Videos <EOS>
 Live Weather News , Map and Videos <EOS>
 World News Tonight With David Muir <EOS>
 Nightline : Late Evening News <EOS>
@@ -184,9 +184,9 @@ Colbert : Michael Cohen's payments from companies 'just the tip of the bribe-ber
 FEC approves first woman candidate to use campaign funds for childcare <EOS>
 EPA to move 'shortly' on chemical in paint stripper blamed for accidental deaths <EOS>
 Protestants decline , more have no religion in a sharply shifting religious landscape (POLL) <EOS>
-The Note : Trump’s presidency on the world stage <EOS>
+The Note : TrumpÂ’s presidency on the world stage <EOS>
 American prisoners freed by North Korea meet with Donald Trump <EOS>
-Former CIA chief Hayden on Powerhouse Politics : 'We are less safe'” <EOS>
+Former CIA chief Hayden on Powerhouse Politics : 'We are less safe'Â” <EOS>
 GOP cadre launches rare effort to force immigration debate in House <EOS>
 'Something will happen' if Iran doesn't negotiate on new nuclear deal : Trump <EOS>
 One year since dismissal , Comey continues to spar with Trump <EOS>
@@ -199,7 +199,7 @@ President Donald Trump's nominee to head the CIA faces tough questions during co
 In Trump country primary showdowns , both parties score critical wins <EOS>
 'Kids Kick Opioids' winner to be announced in West Virginia , amid contested primary <EOS>
 Big stakes in West Virginia , Indiana , Ohio bellwether primaries <EOS>
-Women candidates dominate Democratic primaries amid ‘pink wave’ movement <EOS>
+Women candidates dominate Democratic primaries amid Â‘pink waveÂ’ movement <EOS>
 The Note : A night to celebrate for Trump and McConnell <EOS>
 In Senate race showdowns , tough odds for Democrats fuel Republican hopes <EOS>
 House races offer Democrats best shot at claiming a chamber in Congress <EOS>
@@ -223,11 +223,11 @@ TripAdvisor ranks the best food-experience cities in the world <EOS>
 Decorating your graduation caps has become a college tradition <EOS>
 Famed NYC pizzeria cranks out hundreds of pies a day for cross-country flight delivery to Los Angeles pizza lovers <EOS>
 Moms in NYC get real and spill what they secretly want for Mother's Day <EOS>
-I’ll always remember the sound of my son’s voice <EOS>
+IÂ’ll always remember the sound of my sonÂ’s voice <EOS>
 This Toy Story plane is to infinity and beyond <EOS>
 <X> non-traditional families share how they celebrate Mother's Day <EOS>
 <X> crystal clear accessories you need in your closet , stat <EOS>
-The non-mother who started Mother’s Day <EOS>
+The non-mother who started MotherÂ’s Day <EOS>
 Pecan-themed recipes to treat your mom with on Mother's Day <EOS>
 What to know about Lagom , a hot home-design trend for <X> <EOS>
 How false eyelashes have become a must-have , everyday accessory and a booming market <EOS>
@@ -237,19 +237,19 @@ Babies and their parents descend on Capitol Hill in plea for help <EOS>
 Adorable polar bear makes her debut at zoo <EOS>
 Amazing animals from around the world Photos <EOS>
 Cutest baby animals from around the world Photos <EOS>
-'Avengers : Infinity War' star Sebastian Stan regrets not letting his mom in on a big Marvel ‘secret’ <EOS>
-Candace Cameron Bure : Take it from me (and not DJ Tanner…) <EOS>
+'Avengers : Infinity War' star Sebastian Stan regrets not letting his mom in on a big Marvel Â‘secretÂ’ <EOS>
+Candace Cameron Bure : Take it from me (and not DJ TannerÂ…) <EOS>
 How this business owner opened a dialogue with his employees on addressing sexual harassment : COLUMN <EOS>
 Georgina Chapman breaks her silence on Harvey Weinstein allegations <EOS>
 Spotify scraps R . Kelly music from its playlists <EOS>
 Vintage Superman , Batman comic lot auction grabs $<X> .<X> million on day <X> <EOS>
 Relive the '<X>s in this 'Saved by the Bell' pop-up <EOS>
-Tristan Thompson opens up for <X>st time about having a daughter with Khloe Kardashian : 'It’s way different' <EOS>
+Tristan Thompson opens up for <X>st time about having a daughter with Khloe Kardashian : 'ItÂ’s way different' <EOS>
 'Queer Eye' star Tom Jackson marries ex-wife Abby Parr in intimate ceremony : 'Just the two of us' <EOS>
 Meghan Markle's mom arrives in London for wedding preparations and <X>st meeting with Queen Elizabeth <EOS>
 Supermodel Miranda Kerr welcomes baby boy with Snapchat CEO <EOS>
 'Iron Man' suit worth more than $<X>K missing <EOS>
-Tony nominee Glenda Jackson on Broadway accolades : ‘You can only feel grateful’ <EOS>
+Tony nominee Glenda Jackson on Broadway accolades : Â‘You can only feel gratefulÂ’ <EOS>
 Jordan Peele announces new film , 'Us ,' expected to star Lupita Nyong'o and Elisabeth Moss <EOS>
 'Avengers' star Paul Bettany on that shocking ending to 'Infinity War' <EOS>
 Taylor Swift addresses feud with Kanye West , says it caused 'some really low times' <EOS>
@@ -295,7 +295,7 @@ Inside the National Museum of African American History and Culture <EOS>
 Subway Notes Shows New Yorkers' Political Frustration <EOS>
 Walk down the <X> Oscars red carpet with a <X> view <EOS>
 Watch Milwaukee Police Chief Edward Flynn Talk to Obama About Race Relations in <X>-Degree Virtual Reality <EOS>
-China’s 'Fake' Cities Are Eerie Replicas of Paris , London and Jackson Hole , Wyoming <EOS>
+ChinaÂ’s 'Fake' Cities Are Eerie Replicas of Paris , London and Jackson Hole , Wyoming <EOS>
 Take a Virtual Reality Tour of New York City During the Most Wonderful Time of the Year <EOS>
 Patients , health care workers call for affordable insulin <EOS>
 Ireland's leader apologizes for cervical cancer scandal <EOS>
@@ -418,7 +418,7 @@ The Latest : CSX : Severe weather eyed in train derailment <EOS>
 TRANSCRIPT :  anchor David Muir interviews President Trump <EOS>
 TRANSCRIPT :  Anchor David Muir Speaks With President Trump <EOS>
 President Trump tells ' David Muir : Construction of border wall will begin in 'months' <EOS>
-'World News Tonight’s' David Muir on 'Jimmy Kimmel Live' <EOS>
+'World News TonightÂ’s' David Muir on 'Jimmy Kimmel Live' <EOS>
 David Muir discusses fake news with Jimmy Kimmel Video <EOS>
 David Muir's full interview on 'Jimmy Kimmel Live' Video <EOS>
 The US women's soccer team pays tribute to Parkland victim Video <EOS>
@@ -444,16 +444,16 @@ Parkland shooting survivor who lost her best friend pens personal account , call
 Siblings who survived Florida school massacre on returning to school Video <EOS>
 On the set of 'The Handmaid's Tale' and inside the next chapter of Margaret Atwood's dark world <EOS>
 The hidden meanings behind the designs , colors of the 'The Handmaid's Tale' costumes <EOS>
-'The Handmaid’s Tale' author Margaret Atwood on President Donald Trump's America : 'We’re not living in Gilead yet , but ther <EOS>
+'The HandmaidÂ’s Tale' author Margaret Atwood on President Donald Trump's America : 'WeÂ’re not living in Gilead yet , but ther <EOS>
 A dangerous tour through Mexico's violent drug cartel operations fueling America's heroin addiction <EOS>
 Police guard cartel victim's funeral in Acapulco Video <EOS>
-How one woman is giving back after serving <X> years in prison for a murder she says she didn’t commit <EOS>
+How one woman is giving back after serving <X> years in prison for a murder she says she didnÂ’t commit <EOS>
 TMZ's Van Lathan says he confronted Kanye West about slavery comment to 'get through' to him <EOS>
-Donkey’s milk and snail mucus : How popular South Korean skincare products are made <EOS>
+DonkeyÂ’s milk and snail mucus : How popular South Korean skincare products are made <EOS>
 Olympic skater and 'America's sweetheart' Adam Rippon on becoming a voice for LGBTQ community <EOS>
 How Kim Kardashian's makeup artist started his business from a shoebox and started working with the reality star <EOS>
 Kerry Washington on what to expect from the 'Scandal' series finale and the show's legacy <EOS>
-What it is like being the only doctor in war-torn Sudan’s Nuba Mountains <EOS>
+What it is like being the only doctor in war-torn SudanÂ’s Nuba Mountains <EOS>
 Sting and Shaggy bond over politics , philanthropy and Grammy wins <EOS>
 Woman allegedly trafficked through Backpage .com says new legislation brings 'closure' <EOS>
 Help  , ProPublica and other newsrooms track hate crimes across the US <EOS>
@@ -639,13 +639,13 @@ Trial of Houston Dentist Accused of Killing Husband <EOS>
 US to move embassy to Jerusalem in May <EOS>
 Road signs pointing to 'US Embassy' go up in Jerusalem <EOS>
 Beyonce at Coachella : All of the hidden meanings explained <EOS>
-Beyoncé's Coachella performance most-tweeted , most-viewed ever on YouTube <EOS>
+BeyoncÃ©'s Coachella performance most-tweeted , most-viewed ever on YouTube <EOS>
 Fake News : News , Videos and Photos- <EOS>
 Oprah : Life's come 'full circle' from not being able to afford Barbies to being made into one <EOS>
 Oprah Winfrey's advice to young girls : 'Highest honor on Earth' is 'being yourself' <EOS>
 Amal Clooney reveals her twins' <X>st words and talks about her life with George <EOS>
 George and Amal Clooney step out at March for Our Lives in nation's capital <EOS>
-‘My Shop’ : ‘President Abraham Lincoln’ Shows Off His Office <EOS>
+Â‘My ShopÂ’ : Â‘President Abraham LincolnÂ’ Shows Off His Office <EOS>
 Abraham Lincoln's 'Gettysburg Address' on the <X>th Anniversary -- Full Text <EOS>
 Ghosts of the White House : Lincoln , Adams and Madison Haunt <X> Penn <EOS>
 Peter Travers' summer movie preview : What to see and what to skip Video <EOS>
@@ -701,7 +701,7 @@ Republican National Convention Announces Partial Speakers List <EOS>
 GOP Convention Floor Fight Brewing as Delegates Mull Going Rogue <EOS>
 Jihadists' Computers '<X> Percent' Full of Porn , Ex-Official Says <EOS>
 Senate's Lone Black GOP Senator Gives Deeply Peronsal Floor Speech on Race <EOS>
-'Forgotten Baby Syndrome' : A Parent’s Nightmare of Hot Car Death <EOS>
+'Forgotten Baby Syndrome' : A ParentÂ’s Nightmare of Hot Car Death <EOS>
 Prince Harry Takes HIV Test Live on Facebook <EOS>
 <X> Former Marines Playing 'Pokemon Go' Help Catch Attempted Murder Suspect in California , Police Say <EOS>
 Photos : Hawaii volcano erupts rivers of fire and lava <EOS>
@@ -821,7 +821,7 @@ Oscars <X> : LIVE UPDATES -
 New Hampshire Primary <X> : Live Updates and Analysis - 
 <X> Iowa Caucus Rolling Updates - 
 <X> Dates in <X> States - 
-Syria Starving : A Family’s Fight for Survival - 
+Syria Starving : A FamilyÂ’s Fight for Survival - 
 <X> Golden Globe Awards : LIVE UPDATES - 
 Copy of  Third Democratic Debate - 
 GMA <X> : Watch Dan Childs Stay Awake for <X> Hours Straight - 
