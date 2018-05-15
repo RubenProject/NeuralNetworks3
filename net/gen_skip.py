@@ -5,6 +5,8 @@ from keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from keras.preprocessing.sequence import skipgrams, make_sampling_table
 
 import pandas as pd
+import sys
+import json
 import os
 
 if os.environ['CUDA_VISIBLE_DEVICES'] == '':
@@ -41,64 +43,94 @@ def create():
 	return model
 
 
-def train(model, epoch):
+def train(model, tokenizer, v, epoch):
+	history = ""
 	for _ in range(epoch):
 		loss = 0.0
-		for i, line in enumerate(tokenizer.texts_to_sequences(corpus)):
-			if len(line) < 5:
+		for i, seq in enumerate(tokenizer.texts_to_sequences(corpus)):
+			if len(seq) < 5:
 				continue
-			sequence, label = skipgrams(sequence=line, vocabulary_size=vocab_size, window_size=2, negative_samples=0.0)
+			pairs, _ = skipgrams(sequence=seq, vocabulary_size=v, window_size=2, negative_samples=0.0)
 			x = []
 			y = []
-			for j, s in enumerate(sequence):
-				x.append(to_onehot(s[0], vocab_size))
-				y.append(to_onehot(s[1], vocab_size))
+			for j, p in enumerate(pairs):
+				x.append(to_onehot(p[0], vocab_size))
+				y.append(to_onehot(p[1], vocab_size))
 				
 			x = np.array(x)
 			y = np.array(y)
 			loss += model.train_on_batch(x, y)
 		print(loss)
-	return loss
+		history += str(loss) + "\n"
+	return model
 
 
-corpus_0 = pd.read_csv("../data/polygon.txt", sep="\n")
-corpus_0 = corpus_0[corpus_0.title.str.contains("Not found") == False]
-corpus_0 = corpus_0['title']
+def load_corpus(net_name):
+	corpus_0 = pd.read_csv("../data/polygon_clean.txt", sep="\n")
+	corpus_0 = corpus_0['title']
 
-corpus_1 = pd.read_csv("../data/abcnews.txt", sep="\n")
-corpus_1 = corpus_1[corpus_1.title.str.contains("ABC News - Breaking News") == False]
-corpus_1 = corpus_1['title']
+	corpus_1 = pd.read_csv("../data/abcnews_clean.txt", sep="\n")
+	corpus_1 = corpus_1['title']
 
-corpus_2 = pd.read_csv("../data/nytimes.txt", sep="\n")
-corpus_2 = corpus_2[corpus_2.title.str.contains("Page Not Found") == False]
-corpus_2 = corpus_2['title']
+	corpus_2 = pd.read_csv("../data/nytimes_clean.txt", sep="\n")
+	corpus_2 = corpus_2['title']
 
-corpus = pd.concat([corpus_0, corpus_1, corpus_2])
+	if net_name == 'poly':
+		corpus = corpus_0
+	elif net_name == 'abc':
+		corpus = corpus_1
+	elif net_name == 'ny':
+		corpus = corpus_2
+	elif net_name == 'nap':
+		corpus = pd.concat([corpus_0, corpus_1, corpus_2])
+	else:
+		print("invalid net name")
+		exit()
+	return corpus
 
 
-vocab_size = 5000
-tokenizer = Tokenizer(num_words=vocab_size, filters='"#%&()*+,.-;:<=>@[\\]`\'{|}~\t\n', split=" ", lower=True)
-tokenizer.fit_on_texts(corpus)
-vocab_size = len(tokenizer.word_index) + 1
-word_index = tokenizer.word_index
-print(word_index)
-print("vocabulary size: ", vocab_size)
-rword_index = {v: k for k, v in word_index.items()}
+def tokenize(corpus):
+	vocab_size = 5000
+	tokenizer = Tokenizer(num_words=vocab_size, filters='"#%&()*+-;:<=>@[\\]`\'{|}~\t\n', split=" ", lower=True)
+	tokenizer.fit_on_texts(corpus)
+	vocab_size = len(tokenizer.word_index) + 1
+	word_index = tokenizer.word_index
+	print(word_index)
+	print("vocabulary size: ", vocab_size)
+	rword_index = {v: k for k, v in word_index.items()}
+	return tokenizer, word_index, rword_index, vocab_size
 
 
 #save dictionaries
-json_0 = json.dumps(word_index)
-f = open("dict_abc.json","w")
-f.write(json_0)
-f.close()
-json_1 = json.dumps(rword_index)
-f = open("rdict_abc.json","w")
-f.write(json_1)
-f.close()
+def save_dict(word_index, rword_index):
+	json_0 = json.dumps(word_index)
+	f_dict_name = "dict_" + net_name + ".json"
+	f = open(f_dict_name, "w")
+	f.write(json_0)
+	f.close()
+	json_1 = json.dumps(rword_index)
+	f_rdict_name = "rdict_" + net_name + ".json"
+	f = open(f_rdict_name, "w")
+	f.write(json_1)
+	f.close()
 
 
+#setup
+net_name = sys.argv[1]
+epochs = int(sys.argv[2])
 
+#loading and processing data
+corpus = load_corpus(net_name)
+tokenizer, word_index, rword_index, vocab_size = tokenize(corpus)
+save_dict(word_index, rword_index)
+
+#creating and training network
 model = create()
-loss = train(model, 30)
-print(loss)
-model.save('anp_20.h5')
+model = train(model, tokenizer, vocab_size, epochs)
+#saving data
+f_hist_name = net_name + "_" + str(epochs) + ".dat"
+f_hist = open(f_hist_name, "w")
+f_hist.write(history)
+f_hist.close()
+f_model_name = net_name + "_" + str(epochs) + ".h5"
+model.save(f_model_name)
