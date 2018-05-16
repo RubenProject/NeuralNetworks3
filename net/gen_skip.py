@@ -1,12 +1,11 @@
-import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.preprocessing.text import Tokenizer, text_to_word_sequence
 from keras.preprocessing.sequence import skipgrams, make_sampling_table
-
+from pickle import dump
+import numpy as np
 import pandas as pd
 import sys
-import json
 import os
 
 if os.environ['CUDA_VISIBLE_DEVICES'] == '':
@@ -62,7 +61,7 @@ def train(model, tokenizer, v, epoch):
 			loss += model.train_on_batch(x, y)
 		print(loss)
 		history += str(loss) + "\n"
-	return model
+	return model, history
 
 
 def load_corpus(net_name):
@@ -101,20 +100,6 @@ def tokenize(corpus):
 	return tokenizer, word_index, rword_index, vocab_size
 
 
-#save dictionaries
-def save_dict(word_index, rword_index):
-	json_0 = json.dumps(word_index)
-	f_dict_name = "dict_" + net_name + ".json"
-	f = open(f_dict_name, "w")
-	f.write(json_0)
-	f.close()
-	json_1 = json.dumps(rword_index)
-	f_rdict_name = "rdict_" + net_name + ".json"
-	f = open(f_rdict_name, "w")
-	f.write(json_1)
-	f.close()
-
-
 #setup
 net_name = sys.argv[1]
 epochs = int(sys.argv[2])
@@ -122,15 +107,19 @@ epochs = int(sys.argv[2])
 #loading and processing data
 corpus = load_corpus(net_name)
 tokenizer, word_index, rword_index, vocab_size = tokenize(corpus)
-save_dict(word_index, rword_index)
+
+#save tokenizer
+f_token_name = "token_" + net_name + ".pkl"
+dump(tokenizer, open(f_token_name, 'wb'))
 
 #creating and training network
 model = create()
-model = train(model, tokenizer, vocab_size, epochs)
+model, history = train(model, tokenizer, vocab_size, epochs)
+
 #saving data
-f_hist_name = net_name + "_" + str(epochs) + ".dat"
+f_hist_name = "hist_" + net_name + "_" + str(epochs) + ".dat"
 f_hist = open(f_hist_name, "w")
 f_hist.write(history)
 f_hist.close()
-f_model_name = net_name + "_" + str(epochs) + ".h5"
+f_model_name = "skip_" + net_name + "_" + str(epochs) + ".h5"
 model.save(f_model_name)

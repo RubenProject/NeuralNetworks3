@@ -3,9 +3,9 @@ from keras.models import Sequential
 from keras.layers import LSTM, Dense
 from keras.optimizers import RMSprop
 from keras.preprocessing.text import Tokenizer, text_to_word_sequence
+from pickle import dump
 import pandas as pd
 import numpy as np
-import json
 import sys
 import os
 
@@ -35,10 +35,10 @@ def word2vec(w, w_index):
 
 def create(v, max_len):
 	model = Sequential()
-	model.add(LSTM(128, input_shape=(maxlen, v)))
+	model.add(LSTM(128, input_shape=(max_len, v), return_sequences=True))
 	model.add(LSTM(128))
 	model.add(Dense(v, activation='softmax'))
-	model.compile(loss='categorical_crossentropy', optimzer=RMSprop(lr=0.01))
+	model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.01))
 	return model
 
 def load_corpus(net_name):
@@ -77,17 +77,6 @@ def tokenize(corpus):
         return tokenizer, word_index, rword_index, vocab_size
 
 
-def load_dict(net_name):
-	#TODO get word_index
-	f_name = "dict_" + net_name + ".json"
-	json_0 = open(f_name, "r").read()
-	word_index = json.loads(json_0)
-	#TODO get rword_index
-	f_name = "rdict_" + net_name + ".json"
-	json_1 = open(f_name, "r").read()
-	rword_index = json.loads(json_1)
-	vocab_size = len(word_index)
-	return word_index, rword_index, vocab_size
 
 
 def gen_seq(corpus, tokenizer, vocab_size, max_len=3):
@@ -101,20 +90,22 @@ def gen_seq(corpus, tokenizer, vocab_size, max_len=3):
 	
 	x_new = []
 	for e in x:
-		x_new.append(np.array([to_onehot(e_2, vocab_size) for e_2 in e]))
-	x = np.array(x_new)
-	y = np.array([to_onehot(e, vocab_size) for e in y])
+		x_new.append(np.array([to_onehot(e_2, vocab_size) for e_2 in e], dtype=np.bool))
+	x = np.array(x_new, dtype=np.bool)
+	y = np.array([to_onehot(e, vocab_size) for e in y], dtype=np.bool)
 	return x, y
 
 
 def train(model, x, y, epochs, net_name):
-	for i in range(0, 5):
-		hist = model.fit(x, y, batch_size=128, epochs=epochs/5)
-		print(hist)
-		curr_epoch = i * epoch / 5
-		model_name = "lstm_" + net_name + "_" + int(curr_epoch) + ".h5"
-		model.save(model_name)
-	return model
+	history = ""
+	for i in range(0, epochs):
+		loss = model.train_on_batch(x, y)
+		print(loss)
+		if i % 10 == 0:
+			history += str(i) + ":" + str(loss) + "\n"
+			model_name = "lstm_" + net_name + "_" + str(epochs) + ".h5"
+			model.save(model_name)
+	return model, history
 	
 
 net_name = sys.argv[1]
@@ -122,10 +113,23 @@ epochs = int(sys.argv[2])
 
 corpus = load_corpus(net_name)
 tokenizer, word_index, rword_index, vocab_size = tokenize(corpus)
+
+
+f_token_name = "token_" + net_name + ".pkl"
+#tokenizer = load(open(f_token_name, 'rb'))
+
+
 x, y = gen_seq(corpus, tokenizer, vocab_size)
+print(len(y))
+exit()
 
 model = create(vocab_size, 3)
-model = train(model)
+model, hist = train(model, x, y, epochs, net_name)
+
+f_hist_name = "lstm_" + net_name + ".dat"
+f = open(f_hist_name, "w")
+f.write(hist)
+f.close()
 
 
 
